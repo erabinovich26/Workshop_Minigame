@@ -15,10 +15,10 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
 
-    
+
     int currentWidth = Screen.width;
     int currentHeight = Screen.height;
-    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour
     {
         movement.Enable();
         jumpInput.Enable();
-        
+
 
     }
 
-  
+
     void Update()
     {
         Vector2 mousePos = Input.mousePosition;
@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
 
         moveInput = movement.ReadValue<Vector2>();
 
-            transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
+        transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
 
-            transform.Translate(Vector3.forward * moveInput.y * Time.deltaTime * speed);
+        transform.Translate(Vector3.forward * moveInput.y * Time.deltaTime * speed);
 
         if (IsGrounded())
         {
@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("grounded");
         }
 
-        
     }
 
     private void FixedUpdate()
@@ -71,6 +70,21 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce * jumpSpeed, rb.linearVelocity.z);
-        //rb.AddForce(0, 1 * jumpSpeed, 0);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            transform.SetParent(collision.transform);
+            Debug.Log("collided");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        transform.SetParent(null);
+        Debug.Log("exit collision");
+    }
+
 }
