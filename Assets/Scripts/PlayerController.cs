@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             transform.SetParent(collision.transform);
+
             Debug.Log("collided");
         }
     }
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         transform.SetParent(null);
+
         Debug.Log("exit collision");
     }
 
