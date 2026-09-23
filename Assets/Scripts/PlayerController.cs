@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 mousePos = Input.mousePosition;
+        //Vector2 mousePos = Input.mousePosition;
 
         jumpForce = jumpInput.ReadValue<float>();
 
