@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     public Transform groundCheck;
-    public float groundCheckRadius;
+    public Vector3 groundCheckDim;
     public LayerMask groundLayer;
 
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         movement.Enable();
         jumpInput.Enable();
 
-
+        groundCheckDim = new Vector3(1.1f, .1f, 1.1f);
     }
 
 
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        return Physics.CheckBox(groundCheck.position, groundCheckDim, groundCheck.rotation, groundLayer);
     }
 
     private void Jump()
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.SetParent(collision.transform);
 
-            Debug.Log("collided");
+            //Debug.Log("collided");
         }
     }
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.SetParent(null);
 
-        Debug.Log("exit collision");
+        //Debug.Log("exit collision");
     }
 
 }
