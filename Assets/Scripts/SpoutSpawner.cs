@@ -6,20 +6,16 @@ public class SpoutSpawner : MonoBehaviour
     
 
     public float startDelay = 1;
+    public float startOffset;
     public float spawnInterval = 2;
     public float spawnHeight = -15;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
-        InvokeRepeating("SpawnRandomSpout", startDelay, spawnInterval);
+        startOffset = Random.Range(4f, 20f) / 10f;
+        InvokeRepeating("SpawnRandomSpout", startDelay + startOffset, spawnInterval);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
+   
     void SpawnRandomSpout()
     {
         int platformIndex = Random.Range(0, spoutPrefabs.Length);

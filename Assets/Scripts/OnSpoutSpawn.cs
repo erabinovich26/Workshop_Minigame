@@ -9,13 +9,14 @@ public class OnSpoutSpawn : MonoBehaviour
     private bool reachedMax = false;
     public float maxHeight;
     public float minHeight;
+    public float warningSpawnHeight = -1.09f;
 
     public float waitTime = 2;
     public float timer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Vector3 spawnPos = new Vector3(transform.position.x, -1.09f, transform.position.z);
+        Vector3 spawnPos = new Vector3(transform.position.x, warningSpawnHeight, transform.position.z);
         Instantiate(warning, spawnPos, transform.rotation);
     }
 

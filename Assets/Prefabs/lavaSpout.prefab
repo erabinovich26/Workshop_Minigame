@@ -127,5 +127,6 @@ MonoBehaviour:
   spoutSpeed: 20
   maxHeight: 4.5
   minHeight: -30.3
+  warningSpawnHeight: -1.07
   waitTime: 2
   timer: 0
