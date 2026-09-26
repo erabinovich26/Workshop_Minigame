@@ -5,14 +5,14 @@ public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
     private Vector3 velocity;
-    Vector3 offset;
+    public Vector3 offset;
     public float smoothTime;
     public float maxSpeed = Mathf.Infinity;
 
     
     void Start()
     {
-        offset = new Vector3(0, 6, -8);
+        
     }
 
     void LateUpdate()

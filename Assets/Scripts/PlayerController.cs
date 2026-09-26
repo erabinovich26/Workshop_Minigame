@@ -56,11 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsGrounded())
-        {
-            Jump();
-            //Debug.Log("grounded");
-        }
+       
     }
 
     private bool IsGrounded()
