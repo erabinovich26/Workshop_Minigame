@@ -26,6 +26,6 @@ public class CameraFollow : MonoBehaviour
 
     private void Follow(GameObject target)
     {
-        transform.LookAt(target.transform);
+       transform.LookAt(target.transform);
     }
 }
