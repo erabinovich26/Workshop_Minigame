@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8553377373777567085}
   - component: {fileID: 9179815478585393789}
   m_Layer: 0
-  m_Name: KillYourself
+  m_Name: KillOnStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

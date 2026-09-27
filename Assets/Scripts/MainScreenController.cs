@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MainScreenController : MonoBehaviour
 {
+    public GameObject mainScreenUI; 
+    public GameObject levelScreenUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,13 +17,37 @@ public class MainScreenController : MonoBehaviour
         
     }
 
-    public void Play()
+    public void Levels()
     {
-        SceneManager.LoadScene("SampleScene");
+        levelScreenUI.SetActive(true);
+        mainScreenUI.SetActive(false);
+        //Debug.Log("transitioning 1");
     }
 
     public void Quit()
     {
         Application.Quit();  
+    }
+
+    public void Level1()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void Level3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void Back()
+    {
+        levelScreenUI.SetActive(false);
+        mainScreenUI.SetActive(true);
+        //Debug.Log("transitioning 2");
     }
 }
