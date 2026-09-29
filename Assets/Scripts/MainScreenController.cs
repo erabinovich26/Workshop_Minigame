@@ -1,20 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class MainScreenController : MonoBehaviour
 {
     public GameObject mainScreenUI; 
     public GameObject levelScreenUI;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI myTextMeshPro;
+    public static int Score;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        myTextMeshPro.text = ("Score: " + Score);
     }
 
     public void Levels()
@@ -49,5 +47,11 @@ public class MainScreenController : MonoBehaviour
         levelScreenUI.SetActive(false);
         mainScreenUI.SetActive(true);
         //Debug.Log("transitioning 2");
+    }
+
+    public void ScoreCount()
+    {
+        Score++; 
+        myTextMeshPro.text = ("Score: " + Score); 
     }
 }
