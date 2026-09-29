@@ -20,6 +20,7 @@ public class WinLevel : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         WinScreen();
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void WinScreen()

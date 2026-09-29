@@ -37,6 +37,7 @@ public class LavaKill : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("restarting");
         Time.timeScale = 1f;
         GameIsPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
