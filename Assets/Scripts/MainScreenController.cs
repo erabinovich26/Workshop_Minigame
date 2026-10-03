@@ -29,7 +29,7 @@ public class MainScreenController : MonoBehaviour
 
     public void Level1()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level3");
     }
 
     public void Level2()
@@ -39,7 +39,7 @@ public class MainScreenController : MonoBehaviour
 
     public void Level3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void Back()
