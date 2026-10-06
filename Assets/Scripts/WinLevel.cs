@@ -22,6 +22,7 @@ public class WinLevel : MonoBehaviour
     {
         WinScreen();
         GetComponent<MeshRenderer>().enabled = false;
+
         if (gameObject.CompareTag("BananaWin1"))
         {
             BananaManager.isLevelOneComplete = true;
