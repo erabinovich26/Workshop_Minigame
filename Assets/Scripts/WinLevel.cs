@@ -6,6 +6,7 @@ public class WinLevel : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject WinScreenUI;
+    public static bool isLevelThreeComplete = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,18 @@ public class WinLevel : MonoBehaviour
     {
         WinScreen();
         GetComponent<MeshRenderer>().enabled = false;
+        if (gameObject.CompareTag("BananaWin1"))
+        {
+            BananaManager.isLevelOneComplete = true;
+        }
+        if (gameObject.CompareTag("BananaWin2"))
+        {
+            BananaManager.isLevelTwoComplete = true;
+        }
+        if (gameObject.CompareTag("BananaWin3"))
+        {
+            BananaManager.isLevelThreeComplete = true;
+        }
     }
 
     public void WinScreen()

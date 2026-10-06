@@ -10,9 +10,25 @@ public class MainScreenController : MonoBehaviour
     public TextMeshProUGUI myTextMeshPro;
     public static int Score;
 
+    public GameObject levelOneStar;
+    public GameObject levelTwoStar;
+    public GameObject levelThreeStar;
     private void Start()
     {
         myTextMeshPro.text = ("Score: " + Score);
+
+        if (BananaManager.isLevelOneComplete)
+        {
+            levelOneStar.SetActive(true);
+        }
+        if (BananaManager.isLevelTwoComplete)
+        {
+            levelTwoStar.SetActive(true);
+        }
+        if (BananaManager.isLevelThreeComplete)
+        {
+            levelThreeStar.SetActive(true);
+        }
     }
 
     public void Levels()

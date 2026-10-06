@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Platform
+  - BananaWin2
+  - BananaWin3
+  - BananaWin1
   layers:
   - Default
   - TransparentFX
